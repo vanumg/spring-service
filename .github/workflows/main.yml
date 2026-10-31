@@ -1,0 +1,16 @@
+name: Manual Workflow Example
+
+# This enables the manual trigger button in the GitHub UI
+on:
+  workflow_dispatch:
+
+jobs:
+  run-manual-task:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run a script
+        run: |
+          echo "The workflow was triggered manually!"
