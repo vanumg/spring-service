@@ -20,9 +20,7 @@ jobs:
 
       # Step B: Run a single-line command
       - name: Single Line Command
-        run: echo "Starting the automation process..."
-
-      
+        run: echo "Starting the automation process..."     
           pwd
           echo "Listing files:"
           ls -la
