@@ -19,11 +19,12 @@ jobs:
         run: echo "Starting the automation process..."
 
       # Step C: Run multiple terminal commands sequentially
-      - name: Multi-line Script Execution
-        run: 
-          echo "Starting the automation process..."
+      - name: |
+         echo "Current directory:"
           pwd
-          ls -ltr
+          echo "Listing files:"
+          ls -la
+          
         run: |
           echo "Current directory:"
           
