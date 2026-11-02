@@ -22,9 +22,9 @@ jobs:
       - name: muiltiple comamnds
         run: |
          echo "Current directory:"
-          pwd
-          echo "Listing files:"
-          ls -la
+         pwd
+         echo "Listing files:"
+         ls -la
           
         run: |
           echo "Current directory:"
