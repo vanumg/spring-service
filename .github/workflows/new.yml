@@ -1,20 +1,31 @@
-name: Jekyll site CI
+# 1. The name of your workflow automation
+name: Run My Commands
 
+# 2. Trigger: When should this run? (On code push or manual button click)
 on:
   push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
+  workflow_dispatch:
 
+# 3. Execution Environment (The Server)
 jobs:
-  build:
-
+  execute-commands:
     runs-on: ubuntu-latest
 
+    # 4. The sequential steps containing your commands
     steps:
-    - uses: actions/checkout@v4
-    - name: Build the site in the jekyll/builder container
-      run: |
-        docker run \
-        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
+      # Step A: Download your repository's code onto the runner machine
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Step B: Run a single-line command
+      - name: Single Line Command
+        run: echo "Starting the automation process..."
+
+      # Step C: Run multiple terminal commands sequentially
+      - name: Multi-line Script Execution
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Listing files:"
+          ls -la
