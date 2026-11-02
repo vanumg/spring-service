@@ -1,16 +1,27 @@
-name: Manual Workflow Example
-
-# This enables the manual trigger button in the GitHub UI
-on:
-  workflow_dispatch:
-
+run-name: Run my commands
+on: 
+   push: 
+     branches: [ "main" ]
+   workflow_dispatch: 
 jobs:
-  run-manual-task:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+   execute-commands:
+     runs-on: ubuntu-latest
 
-      - name: Run a script
-        run: |
-          echo "The workflow was triggered manually!"
+     steps:
+       # Step A: Download your repository's code onto the runner machine
+       - name: Check out code
+         uses: actions/checkout@v4
+
+       # run a single line command
+         
+       - name: Single Line Command
+         run: echo "Starting Automation process"
+       # run Multiline command
+       - name: Multiline command
+         run: 
+           echo "current directory"
+           pwd
+           ls -la
+         
+         
+         
