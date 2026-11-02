@@ -25,6 +25,5 @@ jobs:
          pwd
          echo "Listing files:"
          ls -la
-               run: |
-          echo "Current directory:"
+        
           
