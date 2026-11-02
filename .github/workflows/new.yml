@@ -22,10 +22,7 @@ jobs:
       - name: Single Line Command
         run: echo "Starting the automation process..."
 
-      # Step C: Run multiple terminal commands sequentially
-      - name: Multi-line Script Execution
-        run: |
-          echo "Current directory:"
+      
           pwd
           echo "Listing files:"
           ls -la
