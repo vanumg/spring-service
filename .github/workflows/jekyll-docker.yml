@@ -3,8 +3,6 @@ name: Run My Commands
 
 # 2. Trigger: When should this run? (On code push or manual button click)
 on:
-  push:
-    branches: [ "main" ]
   workflow_dispatch:
 
 # 3. Execution Environment (The Server)
